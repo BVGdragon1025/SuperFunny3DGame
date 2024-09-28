@@ -76,6 +76,6 @@ public class GameManager : MonoBehaviour
     private void AddLemur()
     {
         _lemurAmount++;
-        Debug.Log($"Lemur Added! Current amoutn: {_lemurAmount}");
+        Debug.Log($"Lemur Added! Current amount: {_lemurAmount}");
     }
 }
