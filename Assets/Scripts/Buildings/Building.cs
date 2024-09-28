@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class Building : MonoBehaviour
+public class Building : MonoBehaviour
 {
     [Header("Building Data"), Tooltip("Basic building data, e.g. resources amount, building cost")]
     [SerializeField] private string _buildingName;
@@ -12,12 +12,24 @@ public abstract class Building : MonoBehaviour
     public ResourceType ResourceType { get { return _resourceType; } }
     [SerializeField] private int _buildingCost = 0;
     public int BuildingCost {  get { return _buildingCost; } }
-    [SerializeField] private int _resourceAmount;
-    public int Resource { get { return _resourceAmount; } }
+    [SerializeField] private float _resourceAmount;
+    public float Resource { get { return _resourceAmount; } }
     [SerializeField] private float _timeDelay;
     public float TimeDelay { get { return _timeDelay; } }
     [SerializeField] private bool _hasFinished;
     public bool HasFinished { get { return _hasFinished; } }
+
+    [Header("Lemur Data"), Tooltip("Lemur data, e.g. maximum lemur count in this building, current lemur count etc.")]
+    [SerializeField] private int _maxLemurCount;
+    public int MaxLemurCount { get { return _maxLemurCount; } }
+    [SerializeField] private int _currentLemurCount = 0;
+    public int CurrentLemurCount { get { return _currentLemurCount; } }
+
+    [Header("Upgrades Data"), Tooltip("Upgrade levels etc.")]
+    public int buildingLevelUpgrade;
+    public int buildingEfficiencyUpgrade;
+    public bool _randomChanceUnlocked;
+    public bool _freeFoodUnlocked;
 
     protected GameManager gameManager;
 
@@ -31,12 +43,12 @@ public abstract class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_hasFinished) StartCoroutine(StartProduction());
+        if (_hasFinished && _currentLemurCount > 0) ResetProduction();
     }
 
     public bool HasResources()
     {
-        if(gameManager.HasResources(_resourceType, _buildingCost))
+        if(GameManager.Instance.HasResources(_resourceType, _buildingCost))
             return true;
         return false;
     }
@@ -45,12 +57,25 @@ public abstract class Building : MonoBehaviour
     {
         _hasFinished = false;
         yield return new WaitForSeconds(_timeDelay);
-        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount);
+        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount * _currentLemurCount);
         _hasFinished = true;
     }
 
-    public abstract void GiveResource();
+    public void GiveResource()
+    {
+        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount * _currentLemurCount);
+        ResetProduction();
+    }
 
-    public abstract void ResetProduction();
+    public void ResetProduction()
+    {
+        StartCoroutine(StartProduction());
+    }
+
+    public void ChangeLemurCount(int lemurAmount)
+    {
+        _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
+        gameManager.UnemployedLemursAmount = lemurAmount;
+    }
 
 }

@@ -5,18 +5,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [Header("Main Values")]
-    [SerializeField] private int _plasticAmount;
-    [SerializeField] private int _scrapAmount;
-    [SerializeField] private int _foodAmount;
+    [SerializeField] private float _plasticAmount;
+    [SerializeField] private float _scrapAmount;
+    [SerializeField] private float _foodAmount;
     [SerializeField] private int _lemurAmount;
+    [SerializeField] private int _unemployedLemurs;
 
     [Header("Timers")]
     [SerializeField] private float _lemurSpawnTimer;
 
-    public int PlasticAmount { get { return _plasticAmount; } }
-    public int ScrapAmount { get { return _scrapAmount; } }
-    public int FoodAmount { get { return _foodAmount; } }
+    public float PlasticAmount { get { return _plasticAmount; } }
+    public float ScrapAmount { get { return _scrapAmount; } }
+    public float FoodAmount { get { return _foodAmount; } }
     public int LemurAmount { get { return _lemurAmount; } }
+    public int UnemployedLemursAmount { get { return _unemployedLemurs; } set { _unemployedLemurs += value; } }
 
     public static GameManager Instance;
 
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating(nameof(AddLemur), _lemurSpawnTimer, _lemurSpawnTimer);
     }
 
-    public void ChangeResourcesAmount(ResourceType resourceType, int resourceAmount)
+    public void ChangeResourcesAmount(ResourceType resourceType, float resourceAmount)
     {
         switch(resourceType)
         {
@@ -53,7 +55,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Resource added: {resourceType}, amount: {resourceAmount}");
     }
 
-    public bool HasResources(ResourceType resourceType, int resourceAmount)
+    public bool HasResources(ResourceType resourceType, float resourceAmount)
     {
         switch (resourceType)
         {
@@ -77,5 +79,6 @@ public class GameManager : MonoBehaviour
     {
         _lemurAmount++;
         Debug.Log($"Lemur Added! Current amount: {_lemurAmount}");
+
     }
 }
