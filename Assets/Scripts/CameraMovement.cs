@@ -27,11 +27,17 @@ public class CameraMovement : MonoBehaviour
     
 
     float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0f)
+
+        // Check if the zoom can be adjusted
+        if ((scroll > 0f && currentZoom <= maxZoom) || (scroll < 0f && currentZoom >= minZoom))
         {
-            currentZoom -= scroll * zoomSpeed; // Adjust zoom based on scroll input
+            // Adjust zoom based on scroll input
+            currentZoom -= scroll * zoomSpeed; 
             currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom); // Clamp zoom values
-            Camera.main.orthographicSize = currentZoom; // Set the orthographic size
+            
+            // Move the camera
+            Vector3 zooming = new Vector3(0, currentZoom, 0);
+            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, zooming.y, Camera.main.transform.position.z);
         }
 
 }
