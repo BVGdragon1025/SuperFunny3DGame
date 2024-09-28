@@ -19,6 +19,12 @@ public class Building : MonoBehaviour
     [SerializeField] private bool _hasFinished;
     public bool HasFinished { get { return _hasFinished; } }
 
+    [Header("Lemur Data"), Tooltip("Lemur data, e.g. maximum lemur count in this building, current lemur count etc.")]
+    [SerializeField] private int _maxLemurCount;
+    public int MaxLemurCount { get { return _maxLemurCount; } }
+    [SerializeField] private int _currentLemurCount = 0;
+    public int CurrentLemurCount { get { return _currentLemurCount; } }
+
     protected GameManager gameManager;
 
     // Start is called before the first frame update
@@ -31,7 +37,7 @@ public class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_hasFinished) ResetProduction();
+        if (_hasFinished && _currentLemurCount > 0) ResetProduction();
     }
 
     public bool HasResources()
@@ -45,19 +51,24 @@ public class Building : MonoBehaviour
     {
         _hasFinished = false;
         yield return new WaitForSeconds(_timeDelay);
-        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount);
+        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount * _currentLemurCount);
         _hasFinished = true;
     }
 
     public void GiveResource()
     {
-        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount);
+        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount * _currentLemurCount);
         ResetProduction();
     }
 
     public void ResetProduction()
     {
         StartCoroutine(StartProduction());
+    }
+
+    public void ChangeLemurCount(int lemurAmount)
+    {
+        _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
     }
 
 }

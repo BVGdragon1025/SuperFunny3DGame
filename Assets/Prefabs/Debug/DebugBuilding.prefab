@@ -175,3 +175,5 @@ MonoBehaviour:
   _resourceAmount: 5
   _timeDelay: 2
   _hasFinished: 0
+  _maxLemurCount: 5
+  _currentLemurCount: 0
