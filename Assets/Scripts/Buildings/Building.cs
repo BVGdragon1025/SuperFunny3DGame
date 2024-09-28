@@ -12,8 +12,8 @@ public class Building : MonoBehaviour
     public ResourceType ResourceType { get { return _resourceType; } }
     [SerializeField] private int _buildingCost = 0;
     public int BuildingCost {  get { return _buildingCost; } }
-    [SerializeField] private int _resourceAmount;
-    public int Resource { get { return _resourceAmount; } }
+    [SerializeField] private float _resourceAmount;
+    public float Resource { get { return _resourceAmount; } }
     [SerializeField] private float _timeDelay;
     public float TimeDelay { get { return _timeDelay; } }
     [SerializeField] private bool _hasFinished;
@@ -24,6 +24,12 @@ public class Building : MonoBehaviour
     public int MaxLemurCount { get { return _maxLemurCount; } }
     [SerializeField] private int _currentLemurCount = 0;
     public int CurrentLemurCount { get { return _currentLemurCount; } }
+
+    [Header("Upgrades Data"), Tooltip("Upgrade levels etc.")]
+    public int buildingLevelUpgrade;
+    public int buildingEfficiencyUpgrade;
+    public bool _randomChanceUnlocked;
+    public bool _freeFoodUnlocked;
 
     protected GameManager gameManager;
 
@@ -69,6 +75,7 @@ public class Building : MonoBehaviour
     public void ChangeLemurCount(int lemurAmount)
     {
         _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
+        gameManager.UnemployedLemursAmount = lemurAmount;
     }
 
 }
