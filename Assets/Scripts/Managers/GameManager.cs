@@ -53,6 +53,26 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Resource added: {resourceType}, amount: {resourceAmount}");
     }
 
+    public bool HasResources(ResourceType resourceType, int resourceAmount)
+    {
+        switch (resourceType)
+        {
+            case ResourceType.Plastic:
+                if (resourceAmount < _plasticAmount)
+                    return true;
+                break;
+            case ResourceType.Scrap:
+                if(resourceAmount < _scrapAmount)
+                    return true;
+                break;
+            case ResourceType.Food:
+                if (resourceAmount < _foodAmount)
+                    return true;
+                break;
+        }
+        return false;
+    }
+
     private void AddLemur()
     {
         _lemurAmount++;
