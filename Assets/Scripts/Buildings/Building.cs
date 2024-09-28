@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public abstract class Building : MonoBehaviour
+public class Building : MonoBehaviour
 {
     [Header("Building Data"), Tooltip("Basic building data, e.g. resources amount, building cost")]
     [SerializeField] private string _buildingName;
@@ -31,12 +31,12 @@ public abstract class Building : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_hasFinished) StartCoroutine(StartProduction());
+        if (_hasFinished) ResetProduction();
     }
 
     public bool HasResources()
     {
-        if(gameManager.HasResources(_resourceType, _buildingCost))
+        if(GameManager.Instance.HasResources(_resourceType, _buildingCost))
             return true;
         return false;
     }
@@ -49,8 +49,15 @@ public abstract class Building : MonoBehaviour
         _hasFinished = true;
     }
 
-    public abstract void GiveResource();
+    public void GiveResource()
+    {
+        gameManager.ChangeResourcesAmount(_resourceType, _resourceAmount);
+        ResetProduction();
+    }
 
-    public abstract void ResetProduction();
+    public void ResetProduction()
+    {
+        StartCoroutine(StartProduction());
+    }
 
 }

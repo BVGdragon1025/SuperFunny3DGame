@@ -19,7 +19,7 @@ public class BuildingManager : MonoBehaviour
     private bool _isDying;
 
     private int _numberOfObstacles;
-    [SerializeField] private LayerMask _layer;
+    [SerializeField] private LayerMask _zoneLayer;
 
     private GameManager _gameManager;
     private GameObject _zone;
@@ -46,9 +46,21 @@ public class BuildingManager : MonoBehaviour
     {
         if (isPlaced) return;
 
-        if(((1 << other.gameObject.layer) & _layer.value) != 0)
-        {
+        if (((1 << other.gameObject.layer) & _zoneLayer.value) != 0)
             _zone = other.gameObject;
+
+        //if (IsPlaced(other.gameObject)) return;
+
+        if(_zone != null)
+        {
+            Debug.Log("You can place building!");
+            SetPlacementMode(BuildingState.Valid);
+            if (IsPlaced(other.gameObject))
+            {
+                SetPlacementMode(BuildingState.NotValid);
+                return;
+            }
+            return;
         }
 
         _numberOfObstacles++;
@@ -62,16 +74,23 @@ public class BuildingManager : MonoBehaviour
 
         if (IsPlaced(other.gameObject)) return;
 
-        if(((1 << other.gameObject.layer) & _layer.value) != 0)
+        if(((1 << other.gameObject.layer) & _zoneLayer.value) != 0)
         {
             _zone = null;
         }
 
+        if(_zone == null)
+        {
+            Debug.Log("You can't build here!");
+            SetPlacementMode(BuildingState.NotValid);
+            return;
+        }
+
         _numberOfObstacles--;
+
         if(_numberOfObstacles == 0)
         {
-            if(other.gameObject.layer == LayerMask.NameToLayer("Zone"))
-                SetPlacementMode(BuildingState.Valid);
+            SetPlacementMode(BuildingState.Valid);
         }
 
     }
