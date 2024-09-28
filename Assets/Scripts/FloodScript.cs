@@ -9,6 +9,11 @@ public class FloodScript : MonoBehaviour
     private float initialYPosition; // To store the initial Y position of the object
     private float targetYPosition; // Target Y position after flooding
 
+    private int maxFlood = 5;
+    private int minFlood = -5;
+
+    int randomNumber;
+
     void Start()
     {
         // Store the initial Y position
@@ -18,9 +23,23 @@ public class FloodScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        randomNumber = Random.Range(0, 10000);
+
+        if ((randomNumber==1) || (randomNumber==5) || (randomNumber==8) || (randomNumber==9)){
+            
+            targetYPosition = initialYPosition + floodHeight;
+            if (targetYPosition>=minFlood && targetYPosition<=maxFlood){
+                flooding=true;
+            }
+        }
+
+        if (randomNumber==2){
+            floodHeight = -floodHeight;
+        }
+
         if (flooding)
         {
-            targetYPosition = initialYPosition + floodHeight;
+            
             // Smoothly move towards the target height
             float newYPosition = Mathf.MoveTowards(transform.position.y, targetYPosition, floodSpeed * Time.deltaTime);
             transform.position = new Vector3(transform.position.x, newYPosition, transform.position.z);
