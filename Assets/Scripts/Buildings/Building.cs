@@ -76,8 +76,13 @@ public class Building : MonoBehaviour
 
     public void ChangeLemurCount(int lemurAmount)
     {
-        _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
-        gameManager.UnemployedLemursAmount += lemurAmount;
+        if(_currentLemurCount <= gameManager.LemurAmount)
+        {
+            _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
+
+            if(_currentLemurCount < _maxLemurCount && _currentLemurCount > 0)
+                gameManager.UnemployedLemursAmount -= lemurAmount;
+        }
         uiManager.LemurText.text = _currentLemurCount.ToString();
     }
 
