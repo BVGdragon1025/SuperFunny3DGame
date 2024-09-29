@@ -157,7 +157,7 @@ MonoBehaviour:
   isPlaced: 0
   _zoneLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 64
 --- !u!114 &5522028632967186547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3fba3177048244fb2baf18348b1330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  targetPoint: {fileID: 0}
+  characterPrefab: {fileID: 8163733689772219488, guid: 159e125b0c626fb48bb94680d0c3e448,
+    type: 3}
+  spawnPoint: {fileID: 5061768730573755294, guid: de436784dade3ea4aaf68ce62c839736,
+    type: 3}
   speed: 2

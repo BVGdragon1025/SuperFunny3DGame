@@ -23,7 +23,7 @@ public class FloodScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        randomNumber = Random.Range(0, 10000);
+        randomNumber = Random.Range(0, 4000);
 
         if ((randomNumber==1) || (randomNumber==5) || (randomNumber==8) || (randomNumber==9)){
 
