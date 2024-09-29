@@ -85,6 +85,15 @@ public class Building : MonoBehaviour
         uiManager.LemurText.text = _currentLemurCount.ToString();
     }
 
+    public void UpgradeBuilding()
+    {
+        if (gameManager.HasResources(ResourceType, 200 * buildingLevelUpgrade))
+        {
+            buildingLevelUpgrade += 1;
+            transform.position = new Vector3(transform.position.x, transform.position.y + 1.0f, transform.position.z);
+        }
+    }
+
     private void OnMouseDown()
     {
         if(isActiveAndEnabled)
