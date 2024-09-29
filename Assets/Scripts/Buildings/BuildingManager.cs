@@ -48,8 +48,6 @@ public class BuildingManager : MonoBehaviour
         if (((1 << other.gameObject.layer) & _zoneLayer.value) != 0)
             _zone = other.gameObject;
 
-        if (IsPlaced(other.gameObject)) return;
-
         if(_zone != null)
         {
             Debug.Log("You can place building!");

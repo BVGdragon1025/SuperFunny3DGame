@@ -32,11 +32,13 @@ public class Building : MonoBehaviour
     public bool _freeFoodUnlocked;
 
     protected GameManager gameManager;
+    protected UIManager uiManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameManager.Instance;
+        uiManager = UIManager.Instance;
         StartCoroutine(StartProduction());
     }
 
@@ -75,7 +77,14 @@ public class Building : MonoBehaviour
     public void ChangeLemurCount(int lemurAmount)
     {
         _currentLemurCount = Mathf.Clamp(_currentLemurCount + lemurAmount, 0, _maxLemurCount);
-        gameManager.UnemployedLemursAmount = lemurAmount;
+        gameManager.UnemployedLemursAmount += lemurAmount;
+        uiManager.LemurText.text = _currentLemurCount.ToString();
+    }
+
+    private void OnMouseDown()
+    {
+        if(isActiveAndEnabled)
+            uiManager.UpdateBuildingUI(_buildingName, _currentLemurCount.ToString(), this);
     }
 
 }
