@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2052208081649256750}
   - component: {fileID: 4918535813216789434}
   - component: {fileID: 5522028632967186547}
+  - component: {fileID: -2107825996110228134}
   m_Layer: 0
   m_Name: DebugBuilding
   m_TagString: Untagged
@@ -181,3 +182,19 @@ MonoBehaviour:
   buildingEfficiencyUpgrade: 0
   _randomChanceUnlocked: 0
   _freeFoodUnlocked: 0
+--- !u!114 &-2107825996110228134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4474965931410507229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3fba3177048244fb2baf18348b1330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  targetPoint: {fileID: 0}
+  speed: 2
