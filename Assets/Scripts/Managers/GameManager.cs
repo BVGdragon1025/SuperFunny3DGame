@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         }
 
         InvokeRepeating(nameof(AddLemur), _lemurSpawnTimer, _lemurSpawnTimer);
+        _unemployedLemurs = _lemurAmount;
     }
 
     public void ChangeResourcesAmount(ResourceType resourceType, float resourceAmount)
@@ -78,6 +80,7 @@ public class GameManager : MonoBehaviour
     private void AddLemur()
     {
         _lemurAmount++;
+        _unemployedLemurs++;
         Debug.Log($"Lemur Added! Current amount: {_lemurAmount}");
 
     }
