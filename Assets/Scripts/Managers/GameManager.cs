@@ -53,18 +53,21 @@ public class GameManager : MonoBehaviour
         {
             case ResourceType.Plastic:
                 _plasticAmount += resourceAmount;
-                _uiManager.UpdateInfoUI(resourceType, resourceAmount);
+                _uiManager.UpdateInfoUI(resourceType, _plasticAmount += resourceAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_plasticAmount += resourceAmount}");
                 break;
             case ResourceType.Scrap:
                 _scrapAmount += resourceAmount;
+                _uiManager.UpdateInfoUI(resourceType, _scrapAmount += resourceAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_scrapAmount += resourceAmount}");
                 break;
             case ResourceType.Food:
                 _foodAmount += resourceAmount;
+                _uiManager.UpdateInfoUI(resourceType, _foodAmount += resourceAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_foodAmount += resourceAmount}");
                 break;
 
         }
-        _uiManager.UpdateInfoUI(resourceType, resourceAmount);
-        Debug.Log($"Resource added: {resourceType}, amount: {resourceAmount}");
     }
 
     public bool HasResources(ResourceType resourceType, float resourceAmount)
@@ -72,15 +75,15 @@ public class GameManager : MonoBehaviour
         switch (resourceType)
         {
             case ResourceType.Plastic:
-                if (resourceAmount < _plasticAmount)
+                if (resourceAmount <= _plasticAmount)
                     return true;
                 break;
             case ResourceType.Scrap:
-                if(resourceAmount < _scrapAmount)
+                if(resourceAmount <= _scrapAmount)
                     return true;
                 break;
             case ResourceType.Food:
-                if (resourceAmount < _foodAmount)
+                if (resourceAmount <= _foodAmount)
                     return true;
                 break;
         }
