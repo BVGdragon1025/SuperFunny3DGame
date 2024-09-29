@@ -114,9 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buildingName: Greenhouse
   _resourceType: 0
-  _buildingCost: 0
+  _buildingCost: 5
   _resourceAmount: 5
-  _timeDelay: 60
+  _timeDelay: 25
   _hasFinished: 0
   _maxLemurCount: 10
   _currentLemurCount: 0
