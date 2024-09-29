@@ -1157,10 +1157,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.64576495
+  m_Height: 3.501874
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.22245646, y: 1.9923935, z: 0.29}
 --- !u!95 &7987493814256194973
 Animator:
   serializedVersion: 5
@@ -1174,7 +1174,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 57393f3105699ea4596a6f2c13f51a24, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

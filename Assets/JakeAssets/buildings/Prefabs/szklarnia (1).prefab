@@ -67,5 +67,148 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -516098083770646512, guid: 9db43c1b19fb6c54b881662426d8e0da, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 189240597764960476}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1344029970986024366}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 201496439175963454}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2005585577838290280}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7620781935722842181}
   m_SourcePrefab: {fileID: 100100000, guid: 9db43c1b19fb6c54b881662426d8e0da, type: 3}
+--- !u!1 &1786189231444918292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443606495738084677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &189240597764960476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786189231444918292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f3d5ec4b1de7748abc360f450175e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buildingName: Greenhouse
+  _resourceType: 0
+  _buildingCost: 0
+  _resourceAmount: 5
+  _timeDelay: 60
+  _hasFinished: 0
+  _maxLemurCount: 10
+  _currentLemurCount: 0
+  buildingLevelUpgrade: 0
+  buildingEfficiencyUpgrade: 0
+  _randomChanceUnlocked: 0
+  _freeFoodUnlocked: 0
+--- !u!114 &1344029970986024366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786189231444918292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 788a1cc4220b0ff48970c35faae6aab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validPlacementMaterial: {fileID: 2100000, guid: 74f83b1589a25ec4596ef63583eedb30,
+    type: 2}
+  invalidPlacementMaterial: {fileID: 2100000, guid: 8403aec9ccd069d4ea5193595feb3607,
+    type: 2}
+  meshRenderer: {fileID: 7105997590971865736}
+  hasValidPlacement: 0
+  isPlaced: 0
+  _zoneLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!54 &201496439175963454
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786189231444918292}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2005585577838290280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786189231444918292}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7620781935722842181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786189231444918292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d3fba3177048244fb2baf18348b1330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterPrefab: {fileID: 8163733689772219488, guid: 159e125b0c626fb48bb94680d0c3e448,
+    type: 3}
+  spawnPoint: {fileID: 5061768730573755294, guid: de436784dade3ea4aaf68ce62c839736,
+    type: 3}
+  speed: 2
+--- !u!23 &7105997590971865736 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -678588488315902003, guid: 9db43c1b19fb6c54b881662426d8e0da,
+    type: 3}
+  m_PrefabInstance: {fileID: 1443606495738084677}
+  m_PrefabAsset: {fileID: 0}
