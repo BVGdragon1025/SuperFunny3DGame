@@ -39,7 +39,6 @@ public class Building : MonoBehaviour
     {
         gameManager = GameManager.Instance;
         uiManager = UIManager.Instance;
-        StartCoroutine(StartProduction());
     }
 
     // Update is called once per frame

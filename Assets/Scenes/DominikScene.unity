@@ -3233,10 +3233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c23acc36ffd99142a7601875ef2a33f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plasticAmount: 40
-  _scrapAmount: 255
-  _foodAmount: 255
-  _lemurAmount: 255
+  _plasticAmount: 30
+  _scrapAmount: 30
+  _foodAmount: 30
+  _lemurAmount: 5
   _unemployedLemurs: 0
   _lemurSpawnTimer: 10
 --- !u!4 &2000529883
