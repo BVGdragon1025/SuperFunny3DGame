@@ -22,16 +22,28 @@ public class CharacterSpawner : MonoBehaviour
 
     private System.Collections.IEnumerator MoveCharacterToTarget()
     {
+        Vector3 targetPosition = transform.position; // The target position (this object's position)
+
         // Move towards the target position
-        while (currentCharacter != null && Vector3.Distance(currentCharacter.transform.position, transform.position) > 1)
+        while (currentCharacter != null && Vector3.Distance(currentCharacter.transform.position, targetPosition) > 1f)
         {
+            // Calculate the direction to the target
+            Vector3 direction = (targetPosition - currentCharacter.transform.position).normalized;
+
+            // Rotate the character towards the target
+            if (direction != Vector3.zero) // Ensure we don't divide by zero
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                currentCharacter.transform.rotation = Quaternion.Slerp(currentCharacter.transform.rotation, lookRotation, Time.deltaTime * 5f); // Adjust the speed of rotation
+            }
+
             // Move the character towards the target point
-            currentCharacter.transform.position = Vector3.MoveTowards(currentCharacter.transform.position, transform.position, speed * Time.deltaTime);
+            currentCharacter.transform.position = Vector3.MoveTowards(currentCharacter.transform.position, targetPosition, speed * Time.deltaTime);
             yield return null; // Wait for the next frame
         }
 
         // Once the character reaches the target, make it disappear
         Destroy(currentCharacter);
-        SpawnCharacter();
+        SpawnCharacter(); // Optionally spawn another character
     }
 }
