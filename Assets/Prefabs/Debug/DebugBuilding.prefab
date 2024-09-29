@@ -172,7 +172,7 @@ MonoBehaviour:
   _buildingName: TestBuilding
   _resourceType: 0
   _buildingCost: 10
-  _resourceAmount: 5
+  _resourceAmount: 1
   _timeDelay: 2
   _hasFinished: 0
   _maxLemurCount: 5
