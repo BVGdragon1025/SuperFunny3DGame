@@ -6,12 +6,14 @@ public class ButtonHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private Animator animator;
     private Vector3 originalScale;
     private float originalRotationZ;
+    private AudioSource audioSource;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         originalScale = transform.localScale;
         originalRotationZ = transform.eulerAngles.z;
+        audioSource = FindObjectOfType<AudioSource>(); // Znajdź AudioSource w scenie
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -27,6 +29,11 @@ public class ButtonHoverEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
         LeanTween.scale(gameObject, targetScale, 0.2f).setEase(LeanTweenType.easeInOutBack);
         LeanTween.rotateZ(gameObject, originalRotationZ + randomRotationZ, 0.2f).setEase(LeanTweenType.easeInOutBack);
+        
+        if (audioSource != null)
+        {
+            audioSource.Play(); // Odtwórz dźwięk przy hoverze
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)
