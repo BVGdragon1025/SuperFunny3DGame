@@ -54,14 +54,14 @@ Material:
     - _FoamAmount: 0.5
     - _FoamCutoff_foamamount: 1
     - _FoamSize: 30
-    - _FoamSpeed: 1
+    - _FoamSpeed: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
     - _RippleDensity: 9.4
     - _RippleSlimness: 14.62
-    - _RippleSpeed: 0.43
-    - _WaveScale: 5
-    - _WaveSpeed: 1
+    - _RippleSpeed: 0.05
+    - _WaveScale: 0.1
+    - _WaveSpeed: 0.05
     - _smoothness: 0
     m_Colors:
     - _BaseColor: {r: 0, g: 0.69403595, b: 1, a: 1}
