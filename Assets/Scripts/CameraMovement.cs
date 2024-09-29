@@ -9,7 +9,7 @@ public class CameraMovement : MonoBehaviour
 
     public float zoomSpeed = 5f;
     public float minZoom = 5f; // Minimum zoom distance
-    public float maxZoom = 20f; // Maximum zoom distance
+    public float maxZoom = 50f; // Maximum zoom distance
 
     private float currentZoom = 10f; // Initial zoom level
 

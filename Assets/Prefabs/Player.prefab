@@ -231,4 +231,4 @@ MonoBehaviour:
   moveSpeed: 5
   zoomSpeed: 5
   minZoom: 5
-  maxZoom: 30
+  maxZoom: 50

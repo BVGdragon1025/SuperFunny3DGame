@@ -23,7 +23,7 @@ public class CharacterSpawner : MonoBehaviour
     private System.Collections.IEnumerator MoveCharacterToTarget()
     {
         // Move towards the target position
-        while (currentCharacter != null && Vector3.Distance(currentCharacter.transform.position, transform.position) > 0.1f)
+        while (currentCharacter != null && Vector3.Distance(currentCharacter.transform.position, transform.position) > 1)
         {
             // Move the character towards the target point
             currentCharacter.transform.position = Vector3.MoveTowards(currentCharacter.transform.position, transform.position, speed * Time.deltaTime);
