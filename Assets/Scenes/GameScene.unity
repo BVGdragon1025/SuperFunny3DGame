@@ -487,6 +487,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 601893278320714027, guid: faf2c1b5052afad43ad148cd62204a4e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 601893278320714027, guid: faf2c1b5052afad43ad148cd62204a4e,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 994025341058386923, guid: faf2c1b5052afad43ad148cd62204a4e,
         type: 3}
       propertyPath: m_Pivot.x
