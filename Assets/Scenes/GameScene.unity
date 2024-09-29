@@ -2037,6 +2037,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9070681519773136054, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -471.226
+      objectReference: {fileID: 0}
+    - target: {fileID: 9070681519773136054, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -89.565155
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2579,10 +2589,10 @@ SceneRoots:
   - {fileID: 734163555}
   - {fileID: 6188866863117391998}
   - {fileID: 917189414}
+  - {fileID: 2122858671}
   - {fileID: 6503874097232407111}
   - {fileID: 55494577}
   - {fileID: 699307233}
-  - {fileID: 2122858671}
   - {fileID: 7285314364064272849}
   - {fileID: 5393931825541443497}
   - {fileID: 1239614111}
