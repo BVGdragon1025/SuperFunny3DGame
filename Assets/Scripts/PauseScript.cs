@@ -1,34 +1,41 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI; // Add this to use UI Image
 public class PauseScript : MonoBehaviour
 {
     public static bool gameIsPaused;
-    public TextMeshProUGUI pauseText;
+    public RawImage pauseOverlay; // Reference to the raw image component
     
-    private void Start()
+    void Start()
     {
-        pauseText.text = "";
+        // Ensure the overlay is hidden at the start
+         pauseOverlay.gameObject.SetActive(false);
     }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Debug.Log("Escape clicked.");
             gameIsPaused = !gameIsPaused;
             PauseGame();
         }
     }
 
-    void PauseGame ()
+    void PauseGame()
     {
-        if(gameIsPaused)
+        if (gameIsPaused)
         {
-            Time.timeScale = 0f;
-            pauseText.text = "PAUSED";
+            Debug.Log("Paused.");
+            pauseOverlay.gameObject.SetActive(true); // Show the overlay
+            Time.timeScale = 0;
+            
         }
-        else 
+        else
         {
+            Debug.Log("Unpaused.");
+            pauseOverlay.gameObject.SetActive(false); // Hide the overlay
             Time.timeScale = 1;
-            pauseText.text = "";
+            
         }
     }
 }

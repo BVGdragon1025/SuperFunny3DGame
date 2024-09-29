@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 10f;
+    public float moveSpeed = 20f;
 
     public float zoomSpeed = 5f;
     public float minZoom = 5f; // Minimum zoom distance

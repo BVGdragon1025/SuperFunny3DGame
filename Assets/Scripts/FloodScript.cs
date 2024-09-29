@@ -26,6 +26,8 @@ public class FloodScript : MonoBehaviour
         randomNumber = Random.Range(0, 10000);
 
         if ((randomNumber==1) || (randomNumber==5) || (randomNumber==8) || (randomNumber==9)){
+
+            Debug.Log("Flooding!");
             
             targetYPosition = initialYPosition + floodHeight;
             if (targetYPosition>=minFlood && targetYPosition<=maxFlood){
@@ -34,6 +36,7 @@ public class FloodScript : MonoBehaviour
         }
 
         if (randomNumber==2){
+            Debug.Log("Reversing flood!");
             floodHeight = -floodHeight;
         }
 
