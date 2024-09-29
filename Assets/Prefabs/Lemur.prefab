@@ -1089,7 +1089,7 @@ GameObject:
   - component: {fileID: 7987493814256194973}
   m_Layer: 0
   m_Name: Lemur
-  m_TagString: Untagged
+  m_TagString: Lemur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1174,7 +1174,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 57393f3105699ea4596a6f2c13f51a24, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

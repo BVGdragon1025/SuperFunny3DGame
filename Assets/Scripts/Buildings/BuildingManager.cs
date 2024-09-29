@@ -101,6 +101,12 @@ public class BuildingManager : MonoBehaviour
                 hasValidPlacement = true;
                 _building.enabled = true;
                 StartCoroutine(_building.StartProduction());
+                _building.tag = "Building";
+                foreach (Transform child in _building.transform)
+                {
+                    child.gameObject.tag = tag; // Tag each child
+                }
+                            
                 break;
             case BuildingState.Valid:
                 hasValidPlacement = true;

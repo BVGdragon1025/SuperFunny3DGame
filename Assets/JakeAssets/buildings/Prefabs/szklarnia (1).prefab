@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: szklarnia (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9db43c1b19fb6c54b881662426d8e0da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -516098083770646512, guid: 9db43c1b19fb6c54b881662426d8e0da, type: 3}
@@ -102,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1786189231444918292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8f3d5ec4b1de7748abc360f450175e7, type: 3}
   m_Name: 
@@ -187,8 +192,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 4.5639253, z: 5}
+  m_Center: {x: 0, y: 2.2894046, z: 0}
 --- !u!114 &7620781935722842181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +211,10 @@ MonoBehaviour:
   spawnPoint: {fileID: 5061768730573755294, guid: de436784dade3ea4aaf68ce62c839736,
     type: 3}
   speed: 2
+  radius: 5
+  lemurCount: 5
+  isPlaced: 0
+  buildingManager: {fileID: 0}
 --- !u!23 &7105997590971865736 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -678588488315902003, guid: 9db43c1b19fb6c54b881662426d8e0da,

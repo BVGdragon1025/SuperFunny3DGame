@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public float PlasticAmount { get { return _plasticAmount; } }
     public float ScrapAmount { get { return _scrapAmount; } }
     public float FoodAmount { get { return _foodAmount; } }
-    public int LemurAmount { get { return _lemurAmount; } }
+    public int LemurAmount { get { return _lemurAmount; } set {_lemurAmount=value;}}
     public int UnemployedLemursAmount { get { return _unemployedLemurs; } set { _unemployedLemurs = value; } }
     private UIManager _uiManager;
 
