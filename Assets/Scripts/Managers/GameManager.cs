@@ -53,18 +53,18 @@ public class GameManager : MonoBehaviour
         {
             case ResourceType.Plastic:
                 _plasticAmount += resourceAmount;
-                _uiManager.UpdateInfoUI(resourceType, _plasticAmount += resourceAmount);
-                Debug.Log($"Resource added: {resourceType}, amount: {_plasticAmount += resourceAmount}");
+                _uiManager.UpdateInfoUI(resourceType, _plasticAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_plasticAmount}");
                 break;
             case ResourceType.Scrap:
                 _scrapAmount += resourceAmount;
-                _uiManager.UpdateInfoUI(resourceType, _scrapAmount += resourceAmount);
-                Debug.Log($"Resource added: {resourceType}, amount: {_scrapAmount += resourceAmount}");
+                _uiManager.UpdateInfoUI(resourceType, _scrapAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_scrapAmount}");
                 break;
             case ResourceType.Food:
                 _foodAmount += resourceAmount;
-                _uiManager.UpdateInfoUI(resourceType, _foodAmount += resourceAmount);
-                Debug.Log($"Resource added: {resourceType}, amount: {_foodAmount += resourceAmount}");
+                _uiManager.UpdateInfoUI(resourceType, _foodAmount);
+                Debug.Log($"Resource added: {resourceType}, amount: {_foodAmount}");
                 break;
 
         }
