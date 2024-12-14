@@ -1722,6 +1722,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 31945979423887466, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: m_Name
+      value: PlasticBG
+      objectReference: {fileID: 0}
     - target: {fileID: 705847246333038317, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1908,6 +1913,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5871492827623697120, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: m_Name
+      value: FoodBG
+      objectReference: {fileID: 0}
+    - target: {fileID: 6155704630859276057, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: _foodText
+      value: 
+      objectReference: {fileID: 2122858672}
+    - target: {fileID: 6155704630859276057, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: _scrapText
+      value: 
+      objectReference: {fileID: 2122858673}
+    - target: {fileID: 6155704630859276057, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: _plasticText
+      value: 
+      objectReference: {fileID: 2122858674}
     - target: {fileID: 6195714807856735530, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1944,6 +1969,11 @@ PrefabInstance:
       value: 'Greenhouse
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781072301480505435, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrapBG
       objectReference: {fileID: 0}
     - target: {fileID: 7114539811608798417, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
         type: 3}
@@ -1990,6 +2020,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c934ac411d3cc64a8cf3967c96ad8f8, type: 3}
+--- !u!114 &2122858672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4880283529261530922, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2122858671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122858673 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7396577393519132265, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2122858671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2122858674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1496227120268385912, guid: 9c934ac411d3cc64a8cf3967c96ad8f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 2122858671}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4076805525091294958
 PrefabInstance:
   m_ObjectHideFlags: 0
